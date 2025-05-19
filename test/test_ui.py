@@ -16,8 +16,7 @@ from CardPage import CardPage
 def test_shop(driver):
     first_page = FirstPage(driver)
     first_page.go()
-
-    time.sleep(20)
+    time.sleep(20) # Исключаем появление запроса "Вы робот?"
 
     """
     Проверяем, что URL заканчивается на moscow?shippingType=delivery
@@ -54,8 +53,7 @@ def test_shop(driver):
     windows_handles = driver.window_handles     # Получаем список всех открытых окон (вкладок)
     new_tab_handle = windows_handles[-1]
     driver.switch_to.window(new_tab_handle)     # Переключение на новую вкладку
-
-    time.sleep(5)
+    time.sleep(3)   # Исключаем появление запроса "Вы робот?"
 
     """
     Проверяем, что в списке есть хотя бы один продукт

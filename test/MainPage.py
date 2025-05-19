@@ -26,7 +26,7 @@ class MainPage:
         self.__driver.find_element(
             By.XPATH, '//span[text()="ОК"]').click()
         response = self.__driver.find_element(
-            By.CSS_SELECTOR, 'span.a1a8ol1h').text
+            By.CSS_SELECTOR, 'span.f18sb35s').text
         return (response)
 
     @allure.step("Вводим название продукта в поле поиска в верхнем левом углу")
