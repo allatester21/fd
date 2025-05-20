@@ -18,7 +18,7 @@ def test_find_rest(api_url, rest_name):
     response = requests.post(api_url + '/eats/v1/full-text-search/v1/search', headers=headers, json=body)
     cafe = response.json()['blocks'][0]['payload'][0]['title']
 
-    return (cafe, response)
+    return cafe, response
 
 
 def get_menu(api_url, slug):
@@ -34,7 +34,7 @@ def get_menu(api_url, slug):
     response = requests.get(api_url + '/api/v2/menu/retrieve/' + slug, headers=headers, params=param)
     menu = response.json()['payload']['categories']
 
-    return (menu, response)
+    return menu, response
 
 
 def add_dish(api_url, item_id):
@@ -67,4 +67,4 @@ def add_dish(api_url, item_id):
         id_prod = None
         id_basket = None
 
-    return (checkaut, id_basket, id_prod, response)
+    return checkaut, id_basket, id_prod, response
