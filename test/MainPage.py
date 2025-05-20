@@ -20,14 +20,14 @@ class MainPage:
     @allure.step("Указываем адрес доставки")
     def add_address(self, address) -> str:
         self.__driver.find_element(
-            By.XPATH, '//span[text()="Укажите адрес доставки"]').click()
+            By.XPATH, '//span[text()="Укажите адрес доставки"]').click()    # CSS_SELECTOR, '[data-testid="address-button-root"]'
         self.__driver.find_element(
             By.CSS_SELECTOR, "input.afdxd29.mr7w3hr").send_keys(address)
         self.__driver.find_element(
-            By.XPATH, '//span[text()="ОК"]').click()
+            By.CSS_SELECTOR, '[data-testid="desktop-location-modal-confirm-button"]').click()    #  XPATH, '//span[text()="ОК"]'
         response = self.__driver.find_element(
-            By.CSS_SELECTOR, 'span.f18sb35s').text
-        return (response)
+            By.CSS_SELECTOR, 'span.rkz6ur5.UiKitText_root.UiKitText_Regular.UiKitText_Text').text
+        return response
 
     @allure.step("Вводим название продукта в поле поиска в верхнем левом углу")
     def open_find(self, product: str):
